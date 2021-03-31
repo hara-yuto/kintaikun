@@ -13,7 +13,7 @@
 - has_many :comments
 
 
-## commentsテーブル
+## kintaisテーブル
 
 | Column    | Type       | Options     |
 | --------- | ---------- | ----------- |
