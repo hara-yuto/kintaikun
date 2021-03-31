@@ -1,0 +1,44 @@
+
+
+
+
+.kintai_top1{
+  width: 100vw;
+  height: 40vh;
+  border-bottom: 10px double skyblue;
+}
+
+.top_title{
+font-size: 30px;
+
+}
+
+.top_title_all{
+ text-align: center;
+padding: 0.5em 0.5em;
+margin: 2em 0;
+color: #5d627b;
+background: white;
+border-top: solid 5px #5d627b;
+box-shadow: 0 3px 5px rgba(0, 0, 0, 0.22);
+}
+
+.top_title_all p {
+  margin: 0; 
+  padding: 0;
+}
+
+.teigi{
+text-align: center;
+list-style: none;
+font-size: 30px;
+text-decoration: underline;
+text-decoration-color: rgb(231, 146, 167);
+}
+
+
+.kintai_top2{
+width: 100vw;
+height: 40vh;
+border-top: 10px double skyblue;
+}
