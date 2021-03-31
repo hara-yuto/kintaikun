@@ -1,24 +1,25 @@
-# README
+# テーブル設計
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## usersテーブル
 
-Things you may want to cover:
+| Column     | Type   | Options     |
+| ---------- | ------ | ----------- |
+| name       | string | null: false |
+| email      | string | null: false |
+| password   | string | null: false |
 
-* Ruby version
 
-* System dependencies
+### Association
+- has_many :comments
 
-* Configuration
 
-* Database creation
+## kintaisテーブル
 
-* Database initialization
+| Column    | Type       | Options     |
+| --------- | ---------- | ----------- |
+| num       | string     |             |
+| user      | references |             |
 
-* How to run the test suite
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+### Association
+- belongs_to :users
