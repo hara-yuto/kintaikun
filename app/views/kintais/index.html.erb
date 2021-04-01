@@ -2,10 +2,29 @@
 <div class:top_image>
 <%= image_tag("top1.png", class:"kintai_top1")%>
 </div>
+<% if user_signed_in? %>
+<div class="nav__right"> 
+<%= link_to "ログアウト", destroy_user_session_path, class: :nav__logout ,method: :delete%>
+</div> 
+<%else%>
+<div class="nav__right">
+<%= link_to "ログイン", new_user_session_path , class: :nav__btn %>
+<%= link_to "新規登録", new_user_registration_path, class: :nav__btn %>
+ </div>
+<%end%>
+
+
 <div>
 <div class= top_title_all>
 <h1 class= top_title>🕴勤怠くん🕴</h1>
 </div>
+    <% if user_signed_in? %>
+      <div class="greeting">      
+        <p> こんにちは、
+        <%= link_to current_user.name + "さん", "/users/#{current_user.id}", class: :greeting__link%>
+        </p>
+       </div> 
+       <% end %>
 <ul>
 <li class=teigi>労働時間の管理が簡単！</li>
 <li class=teigi>残業時間の超過防止！</li>
@@ -14,16 +33,7 @@
 </div>
 
 
-<% if user_signed_in? %>
-<div class="nav__right"> 
-<%= link_to "ログアウト", "#", class: :nav__logout ,method: :delete%>
-</div> 
-<%else%>
-<div class="nav__right">
-<%= link_to "ログイン", new_user_session_path , class: :nav__btn %>
-<%= link_to "新規登録", new_user_registration_path, class: :nav__btn %>
- </div>
-<%end%>
+
 
 
 
