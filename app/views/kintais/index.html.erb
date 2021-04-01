@@ -1,2 +1,44 @@
-<h1>Kintais#index</h1>
-<p>Find me in app/views/kintais/index.html.erb</p>
+<head>
+<title>kintaikanri</title>
+</head>
+<body>
+<div class:top_image>
+<%= image_tag("top1.png", class:"kintai_top1")%>
+</div>
+<% if user_signed_in? %>
+<div class="nav__right"> 
+<%= link_to "ログアウト", destroy_user_session_path, class: :nav__logout ,method: :delete%>
+</div> 
+<%else%>
+<div class="nav__right">
+<%= link_to "ログイン", new_user_session_path , class: :nav__btn %>
+<%= link_to "新規登録", new_user_registration_path, class: :nav__btn %>
+ </div>
+
+ <div id="calendar"></div>
+<%end%>
+
+
+<div>
+<div class= top_title_all>
+<h1 class= top_title>🕴Kintaiくん🕴</h1>
+</div>
+    <% if user_signed_in? %>
+      <div class="greeting">      
+        <p> 
+        <%= link_to current_user.name + "さん", "/users/#{current_user.id}", class: :greeting__link%>
+        の労働時間管理✍️
+        </p>
+       </div> 
+       <% end %>
+<ul>
+<li class=teigi>労働時間の管理が簡単！</li>
+<li class=teigi>残業時間の超過防止！</li>
+<li class=teigi>ワークライフバランス実現！</li>
+</ul>
+</div>
+
+<div class:foot_image>
+<%= image_tag("foot2.png", class:"kintai_top2")%>
+</div>
+</body>
