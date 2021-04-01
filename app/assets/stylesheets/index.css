@@ -42,3 +42,10 @@ width: 100vw;
 height: 40vh;
 border-top: 10px double skyblue;
 }
+
+.nav__right{
+text-align: center;
+font-size: 50px;
+margin: 20px;
+
+}
