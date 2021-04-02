@@ -9,13 +9,12 @@
 <div class="nav__right"> 
 <%= link_to "ログアウト", destroy_user_session_path, class: :nav__logout ,method: :delete%>
 </div> 
+
 <%else%>
 <div class="nav__right">
 <%= link_to "ログイン", new_user_session_path , class: :nav__btn %>
 <%= link_to "新規登録", new_user_registration_path, class: :nav__btn %>
  </div>
-
- <div id="calendar"></div>
 <%end%>
 
 
@@ -29,8 +28,8 @@
         <%= link_to current_user.name + "さん", "/users/#{current_user.id}", class: :greeting__link%>
         の労働時間管理✍️
         </p>
-       </div> 
-       <% end %>
+       </div>  
+      <% end %>
 <ul>
 <li class=teigi>労働時間の管理が簡単！</li>
 <li class=teigi>残業時間の超過防止！</li>
@@ -38,6 +37,9 @@
 </ul>
 </div>
 
+<% if user_signed_in? %>
+<%= link_to "労働時間の計算に進む", events_index_path ,class: :nav__btn%>
+ <% end %>
 <div class:foot_image>
 <%= image_tag("foot2.png", class:"kintai_top2")%>
 </div>
