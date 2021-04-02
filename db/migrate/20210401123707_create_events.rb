@@ -3,6 +3,7 @@ class CreateEvents < ActiveRecord::Migration[6.0]
     create_table :events do |t|
       t.string :num
       t.datetime :start_time
+      t.references :user,       foreign_key: true
       t.timestamps
     end
   end

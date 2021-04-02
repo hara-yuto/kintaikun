@@ -1,13 +1,15 @@
-<%#= link_to 'イベント追加', new_kintaikun_even_path %>
-<%=link_to 'もどる', root_path, class: :nav__btn%>
+ 
+<%= link_to '労働時間入力', new_event_path,class: :nav__btn%>
+
 <%= month_calendar events: @events do |date, events| %>
   <%= date.day %>
 
-<%# ここから追記 %>
+
   <% events.each do |event| %>
     <div>
-      <%= event.title %>
+      <%= event.num %>
     </div>
   <% end %>
-<%# ここまで追記 %>
+
 <% end %>
+<%=link_to '⬅️【TOPへもどる】', root_path, class: :nav__btn%>

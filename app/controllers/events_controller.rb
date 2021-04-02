@@ -1,6 +1,7 @@
 class EventsController < ApplicationController
   def index
     @events = Event.all
+  
   end
 
   def new
@@ -14,8 +15,10 @@ class EventsController < ApplicationController
 
   private
 
+
+
   def event_parameter
-    params.require(:event).permit(:title, :content, :start_time)
+    params.require(:event).permit(:num, :start_time).merge(user_id: current_user.id)
   end
 end
 
