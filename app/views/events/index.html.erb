@@ -1,0 +1,15 @@
+ 
+<%= link_to '労働時間入力', new_event_path,class: :nav__btn%>
+
+<%= month_calendar events: @events do |date, events| %>
+  <%= date.day %>
+
+
+  <% events.each do |event| %>
+    <div>
+      <%= event.content %>
+    </div>
+  <% end %>
+
+<% end %>
+<%=link_to '⬅️【TOPへもどる】', root_path, class: :nav__btn%>
