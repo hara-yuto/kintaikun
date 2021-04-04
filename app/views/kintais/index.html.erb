@@ -25,7 +25,7 @@
     <% if user_signed_in? %>
       <div class="greeting">      
         <p> 
-        <%= link_to current_user.name + "さん", events_index_path , class: :greeting__link%>
+        <%= link_to current_user.name + "さん", "#" , class: :greeting__link%>
         の労働時間管理✍️
         </p>
        </div>  
@@ -37,8 +37,18 @@
 </ul>
 </div>
 
-<% if user_signed_in?&& current_user.id  %>
-<%= link_to "労働時間の計算に進む", events_index_path ,class: :nav__btn%>
+<% if user_signed_in? %>
+<%#= link_to "労働時間の計算に進む", events_index_path(),class: :nav__btn%>
+<%= link_to '労働時間入力', new_event_path,class: :nav__btn%>
+<%= month_calendar events: @events do |date, events| %>
+  <%= date.day %>
+  <% events.each do |event| %>
+    <div>
+      <%= event.content %>
+    </div>
+  <% end %>
+
+<% end %>
  <% end %>
 <div class:foot_image>
 <%= image_tag("foot2.png", class:"kintai_top2")%>

@@ -1,6 +1,7 @@
 class Event < ApplicationRecord
 
-  validates :num, presence: true,format: {with: /\A[0-9]+\z/}
+  validates :ccontent, presence: true
+
 
   belongs_to :user
 
